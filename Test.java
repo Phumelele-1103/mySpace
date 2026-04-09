@@ -29,14 +29,7 @@ public class Test{
          String username = sc.nextLine();
 
          //validate username
-         boolean validUsername = username.contains("_") && username.length() <= 5;
-         
-
-         
-     }
-    }
-    
-
-    
-    }
+         boolean validUsername = username.contains("_") && username.length() <= 5;   
+    }   
+  } 
 }
