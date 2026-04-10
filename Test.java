@@ -29,7 +29,21 @@ public class Test{
          String username = sc.nextLine();
 
          //validate username
-         boolean validUsername = username.contains("_") && username.length() <= 5;   
+         boolean validUsername = username.contains("_") && username.length() <= 5;
+         while(!validUsername){
+            System.out.println("Username must contain an underscore(_) and not longer than 5 characters");
+            System.out.print("Create a username: ");
+            username = sc.nextLine();
+            break;    
+         }
+            System.out.println("Username captured!");
+
+            System.out.print("Create a password");
+            String password = sc.nextLine();
+            boolean validPassword = password.matches(".*[A-Z].*") &&
+                                    password.matches(".*//d.*") &&
+                                    //condition for special characters
+                                    password.length()
     }   
   } 
 }
