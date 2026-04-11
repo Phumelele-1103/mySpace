@@ -34,6 +34,7 @@ public class Test{
             System.out.println("Username must contain an underscore(_) and not longer than 5 characters");
             System.out.print("Create a username: ");
             username = sc.nextLine();
+            validUsername = username.contains("_") && username.length() <= 5;
             break;    
          }
             System.out.println("Username captured!");
@@ -42,8 +43,34 @@ public class Test{
             String password = sc.nextLine();
             boolean validPassword = password.matches(".*[A-Z].*") &&
                                     password.matches(".*//d.*") &&
-                                    //condition for special characters
-                                    password.length()
+                                    password.matches(".*[ @ # $ & * { } < > ! ? / ' ^ _ ~].*") &&
+                                    password.length() >= 8;
+            while(!validPassword){
+                System.out.println("Password should be atleast 8 characters, contain a number and a special character");
+                System.out.print("Create a password: ");
+                password = sc.nextLine();
+                validPassword = password.matches(".*[A-Z].*") &&
+                                    password.matches(".*//d.*") &&
+                                    password.matches(".*[ @ # $ & * { } < > ! ? / ' ^ _ ~].*") &&
+                                    password.length() >= 8; 
+                
+            }
+
+            System.out.println("Password captured!");
+
+            //Ask for cellphone number
+            System.out.println("Enter your South African cellphone number: ");
+            int cellphoneNumber = sc.nextInt();
+            boolean validCellNumber = cellphoneNumber.matches(".*[6-8] [0-9].*");
+
+            while(!validCellNumber){
+                System.out.println("Enter a valid South African cellphone number!");
+                cellphoneNumber = sc.nextInt();
+                validCellNumber = cellphoneNumber.matches(".*[6-8] [0-9].*");
+                break;
+            }
+
+            System.out.println("Cellphone number captured");
     }   
   } 
 }
