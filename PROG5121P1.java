@@ -4,7 +4,7 @@ import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Test{
+public class PROG5121P1{
     public static void main(String[] args){
     Scanner sc = new Scanner(System.in);
     ArrayList<Login> users = new ArrayList<>();
@@ -35,7 +35,7 @@ public class Test{
             System.out.print("Create a username: ");
             username = sc.nextLine();
             validUsername = username.contains("_") && username.length() <= 5;
-            break;    
+             
          }
             System.out.println("Username captured!");
 
@@ -59,15 +59,14 @@ public class Test{
             System.out.println("Password captured!");
 
             //Ask for cellphone number
-            System.out.println("Enter your South African cellphone number: ");
-            int cellphoneNumber = sc.nextInt();
-            boolean validCellNumber = cellphoneNumber.matches(".*[6-8] [0-9].*");
-
-            while(!validCellNumber){
+            System.out.println("Enter your South African cellphone number: Format +27");
+            String cellNumber = sc.nextLine();
+            String regex = "\\+27[6-8]\\{8}";
+             
+            while(!cellNumber.matches(regex)){
                 System.out.println("Enter a valid South African cellphone number!");
-                cellphoneNumber = sc.nextInt();
-                validCellNumber = cellphoneNumber.matches(".*[6-8] [0-9].*");
-                break;
+                cellNumber = sc.nextLine();
+                regex = "\\+27[6-8]\\{8}";
             }
 
             System.out.println("Cellphone number captured");
