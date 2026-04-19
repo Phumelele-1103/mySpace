@@ -23,9 +23,8 @@ public class PROG5121P1{
 
      switch(choice){
       //prompt user to create account
-       case 1:
-         System.out.println("Register: ");
-         System.out.print("Create a username: ");
+        case 1: //register
+         System.out.print("To register, create a username: ");
          String username = sc.nextLine();
 
          //validate username
@@ -34,9 +33,9 @@ public class PROG5121P1{
             System.out.println("Username must contain an underscore(_) and not longer than 5 characters");
             System.out.print("Create a username: ");
             username = sc.nextLine();
-            validUsername = username.contains("_") && username.length() <= 5;
-             
+            validUsername = username.contains("_") && username.length() <= 5;     
          }
+             
             System.out.println("Username captured!");
 
             System.out.print("Create a password");
@@ -52,14 +51,14 @@ public class PROG5121P1{
                 validPassword = password.matches(".*[A-Z].*") &&
                                     password.matches(".*//d.*") &&
                                     password.matches(".*[ @ # $ & * { } < > ! ? / ' ^ _ ~].*") &&
-                                    password.length() >= 8; 
-                
+                                    password.length() >= 8;   
             }
 
             System.out.println("Password captured!");
 
             //Ask for cellphone number
-            System.out.println("Enter your South African cellphone number: Format +27");
+            System.out.println("Enter your South African cellphone number: Format +27xxxxxxxxx.");
+            System.out.print("(+2)");
             String cellNumber = sc.nextLine();
             String regex = "\\+27[6-8]\\{8}";
              
@@ -70,6 +69,18 @@ public class PROG5121P1{
             }
 
             System.out.println("Cellphone number captured");
-    }   
+
+            //Validate if user details
+            //use method to get user details
+            //prompt user to log in
+            break;
+         case 2: //Login
+            System.out.println("Enter username and password to login.");
+            System.out.print("Username: ");
+            String username = sc.nextLine();
+            //Validate user data if it exists on the database
+            //use method
+         
+         } 
   } 
 }
