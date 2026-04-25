@@ -60,12 +60,12 @@ public class PROG5121P1{
             System.out.println("Enter your South African cellphone number: Format +27xxxxxxxxx.");
             System.out.print("(+2)");
             String cellNumber = sc.nextLine();
-            String regex = "\\+27[6-8]\\{8}";
+            String regex = "^\\+27[6-8]\\d{8}$";
              
             while(!cellNumber.matches(regex)){
                 System.out.println("Enter a valid South African cellphone number!");
                 cellNumber = sc.nextLine();
-                regex = "\\+27[6-8]\\{8}";
+                regex = "^\\+27[6-8]\\d{8}$";
             }
 
             System.out.println("Cellphone number captured");
