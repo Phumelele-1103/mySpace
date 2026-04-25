@@ -58,14 +58,14 @@ public class PROG5121P1{
 
             //Ask for cellphone number
             System.out.println("Enter your South African cellphone number: Format +27xxxxxxxxx.");
-            System.out.print("(+2)");
             String cellNumber = sc.nextLine();
             String regex = "^\\+27[6-8]\\d{8}$";
+            boolean validNumber = cellnumber.matches(regex);
              
-            while(!cellNumber.matches(regex)){
+            while(!){
                 System.out.println("Enter a valid South African cellphone number!");
                 cellNumber = sc.nextLine();
-                regex = "^\\+27[6-8]\\d{8}$";
+                validNumber = cellNumber.matches(regex);
             }
 
             System.out.println("Cellphone number captured");
@@ -78,9 +78,21 @@ public class PROG5121P1{
             System.out.println("Enter username and password to login.");
             System.out.print("Username: ");
             String username = sc.nextLine();
+            System.out.print("Password: ");
+            password = sc.nextLine();
+            //verify details
+            //boolean
+            if(password.isEmpty()){
+                System.out.println("If forgotten password enter cellphone number");
+                System.out.print("Cellnumber: ");
+                cellNumber = sc.nextLine();
+                validNumber
+            }
+            
+            
             //Validate user data if it exists on the database
-            //use method
+            //use method to validate details
          
-         } 
-  } 
+    } 
+  }
 }
