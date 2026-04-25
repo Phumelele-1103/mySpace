@@ -56,10 +56,33 @@ public class WorkoutApp{
           System.out.println("Your cellphone number is: " + cellnumber + ".");
 
           //ask for password
-          System.out.print("Step 3
-          
+          System.out.print("Step 3, create a password: ");
+          String password = sc.nextLine();
+          boolean validPassword = password.length() >=8 &&
+                                  password.matches(".*\\d.*") &&
+                                  password.matches(".*[A-Z].*") &&
+                                  password.matches(".*[ @ # $ & % ].*");
+          //validate password
+          while(!validPassword){ 
+            System.out.println("Invalid password format! Must have an uppercase, contain a atleast 1 digit and(@ # $ & %);
+            System.out.print("Create a valid password: ");
+            password = sc.nextLine();
+            validPassword = password.length() >= 8 &&
+                                  password.matches(".*\\d.*") &&
+                                  password.matches(".*[A-Z].*") &&
+                                  password.matches(".*[ @ # $ & % ].*");
+          }
+          System.out.println.("Password captured. You may now login.");
 
+        case 2:
+          System.out.println("To log in, enter username and password.");
+          System.out.print("Username: ")
+          username = sc.nextLine();
+          //validate username
+          System.out.p
+          //validate password
           
+            
           
 
           
