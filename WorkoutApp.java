@@ -26,20 +26,38 @@ public class WorkoutApp{
         case 1:
           //create username
           System.out.print("Step 1, Enter email address: ");
-          String username = sc.nextLine();
-          boolean validUsername = username.matches(".*[@gmail.com @icloud.com @yahoo.com @email @outlook].*");
+          String email = sc.nextLine();
+          boolean validEmail = email.matches(".*[@gmail.com @icloud.com @yahoo.com @email @outlook].*");
 
-          while(!validUsername){
+          while(!validEmail){
             System.out.println("Enter valid email address(e.g xxx@gmail.com)!")
-            System.out.print("Username: ");
+            System.out.print("Ema: ");
             username = sc.nextLine();
-            validUsername  username.matches(".*[@gmail.com @icloud.com @yahoo.com @email @outlook].*");
+            validEmail = email.matches(".*[@gmail.com @icloud.com @yahoo.com @email @outlook].*");
           }
-          System.out.println("Username successfully captured!");
+          System.out.println("Email successfully captured!");
           int uniqueID = random.nextInt(1000, 7000);
           String username = email.substring(0, email.indexOf("@"));
           System.out.println("Your username will be: " + username + uniqueID);
-          break;
+
+          //ask for cellphone
+          System.out.print("Step 2, enter cellphone number: ");
+          String cellNumber = sc.nextLine();
+          String regex = "^\\+27[6-8]\\d{8}$";
+          boolean validNumber = cellNumber.matches(regex);
+
+          while(!validNumber){
+            System.out.println("Invalid format! Use +27xxxxxxxxx.");
+            System.out.print("Enter a valid number: ");
+            cellNumber = sc.nextLine();
+            validNumber = cellNumber.matches(regex);   
+          }
+          System.out.println("Number captured!");
+          System.out.println("Your cellphone number is: " + cellnumber + ".");
+
+          //ask for password
+          System.out.print("Step 3
+          
 
           
           
